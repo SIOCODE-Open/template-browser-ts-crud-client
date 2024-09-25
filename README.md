@@ -1,4 +1,4 @@
-# Backend Client Node
+# Backend Client Browser
 
 This is a [ProJor](https://projor.io) template, that generates a _TypeScript Client Library (ESM, browser-compatible)_ for a _CRUD API_. See the [`.entities`](.projor/.entities) file on how to define the supported resources.
 

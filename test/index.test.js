@@ -23,16 +23,16 @@ function randomDouble(min = 0, max = 1000) {
     return Math.random() * (max - min) + min;
 }
 
-describe("Backend Client Node Tests", () => {
+describe("Backend Client Browser Tests", () => {
     const backendUrl =
-        process.env.BACKEND_CLIENT_NODE_TEST_BACKEND_URL ||
+        process.env.BACKEND_CLIENT_BROWSER_TEST_BACKEND_URL ||
         "http://localhost:8080/backend/v1";
     const authLoginName =
-        process.env.BACKEND_CLIENT_NODE_TEST_AUTH_LOGIN_NAME || "admin";
+        process.env.BACKEND_CLIENT_BROWSER_TEST_AUTH_LOGIN_NAME || "admin";
     const authLoginPassword =
-        process.env.BACKEND_CLIENT_NODE_TEST_AUTH_LOGIN_PASSWORD || "admin";
+        process.env.BACKEND_CLIENT_BROWSER_TEST_AUTH_LOGIN_PASSWORD || "admin";
     const authJwtToken =
-        process.env.BACKEND_CLIENT_NODE_TEST_AUTH_JWT_TOKEN || null;
+        process.env.BACKEND_CLIENT_BROWSER_TEST_AUTH_JWT_TOKEN || null;
 
     describe("Organization Unit Service Tests (/backend/v1/organization-unit)", () => {
         var authToken = null;
