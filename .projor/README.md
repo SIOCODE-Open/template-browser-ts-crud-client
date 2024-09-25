@@ -1,11 +1,11 @@
-# ProJor Spring Boot CRUD (+ authentication) Template
+# ProJor TypeScript Client Library for CRUD Template
 
 This is a [ProJor](https://projor.io) template, that generates a _TypeScript Client Library (ESM, browser-compatible)_ for the input entities.
 
 ## Using
 
 * You should first install [ProJor](https://projor.io) to get started with this template.
-* TODO: Add app specific instructions here.
+* You should also have [Node.js](https://nodejs.org) installed.
 * After that, open up the [`.entities`](.entities) file and start defining the entities you want your app to support:
 
 ```
@@ -30,7 +30,21 @@ entity Employee {
 projor generate
 ```
 
-* After that, the client library is ready for use.
+* After that, you should build the client library into ES modules, and TypeScript definitions:
+
+```bash
+npm install
+npm run build
+```
+
+* After that, you should start a new backend (generated for example from [template-spring-boot-crud](https://github.com/SIOCODE-Open/template-spring-boot-crud))
+
+* Now you can run the tests of the library:
+
+```bash
+npm test
+```
+
 * Whenever you want to _modify how the code is generataed_, you should edit the templates in [template](template/), and run `projor generate` again.
 
 ## How it works
