@@ -1,0 +1,24 @@
+{
+    "map": {},
+    "filename": "package.json",
+    "formatUsing": "json"
+}
+---
+{
+    "name": "@{{$.scope}}/{{$.name}}",
+    "version": "{{$.version}}",
+    "private": true,
+    "description": "{{{$.description}}}",
+    "browser": "lib/index.js",
+    "types": "types/index.d.ts",
+    "type": "module",
+    "devDependencies": {
+        "typescript": "^5.6.2",
+        "chai": "^4.5.0",
+        "mocha": "^10.7.3"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test": "mocha"
+    }
+}
