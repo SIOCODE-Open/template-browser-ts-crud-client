@@ -195,7 +195,7 @@ export interface IOrganizationUnitService {
     search(
         filter: IOrganizationUnitFilter,
         opts?: IBackendListingOptions<IOrganizationUnitSort>
-    );
+    ): Promise<Array<IOrganizationUnit>>;
 
     /**
      * Count the total number of Organization Unit objects that match a filter.
@@ -309,7 +309,7 @@ class OrganizationUnitServiceImpl implements IOrganizationUnitService {
         });
     }
 
-    async getById(id: string): Promise<IOrganizationUnit | null> {
+    async getById(id: string): Promise<IOrganizationUnit> {
         // FIXME: Wrap for error handling
         // TODO: Validate ID
         return await _makeRequest(this._baseUrl, this._headers, {
@@ -571,7 +571,7 @@ export interface IEmployeeService {
     search(
         filter: IEmployeeFilter,
         opts?: IBackendListingOptions<IEmployeeSort>
-    );
+    ): Promise<Array<IEmployee>>;
 
     /**
      * Count the total number of Employee objects that match a filter.
@@ -711,7 +711,7 @@ class EmployeeServiceImpl implements IEmployeeService {
         });
     }
 
-    async getById(id: string): Promise<IEmployee | null> {
+    async getById(id: string): Promise<IEmployee> {
         // FIXME: Wrap for error handling
         // TODO: Validate ID
         return await _makeRequest(this._baseUrl, this._headers, {
@@ -970,7 +970,10 @@ export interface IShiftService {
      * @param opts Options for paging and sorting
      * @returns A list of filtered Shift objects
      */
-    search(filter: IShiftFilter, opts?: IBackendListingOptions<IShiftSort>);
+    search(
+        filter: IShiftFilter,
+        opts?: IBackendListingOptions<IShiftSort>
+    ): Promise<Array<IShift>>;
 
     /**
      * Count the total number of Shift objects that match a filter.
@@ -1068,7 +1071,7 @@ class ShiftServiceImpl implements IShiftService {
         });
     }
 
-    async getById(id: string): Promise<IShift | null> {
+    async getById(id: string): Promise<IShift> {
         // FIXME: Wrap for error handling
         // TODO: Validate ID
         return await _makeRequest(this._baseUrl, this._headers, {

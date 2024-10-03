@@ -11,7 +11,8 @@
         "declarationDir": "types",
         "sourceMap": true,
         "declarationMap": true,
-        "lib": ["ES2015", "DOM"]
+        "lib": ["ES2015", "DOM"],
+        "strict": true
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]

@@ -239,7 +239,7 @@ export interface I{{pascalCase name}}Service {
     search(
         filter: I{{pascalCase name}}Filter,
         opts?: I{{pascalCase ../$.backend.name}}ListingOptions<I{{pascalCase name}}Sort>
-    );
+    ): Promise<Array<I{{pascalCase name}}>>;
 
     /**
         * Count the total number of {{capitalCase name}} objects that match a filter.
@@ -386,7 +386,7 @@ class {{pascalCase name}}ServiceImpl implements I{{pascalCase name}}Service {
         return await _makeRequest(this._baseUrl, this._headers, { method: 'GET', path: '/count' });
     }
 
-    async getById(id: string): Promise<I{{pascalCase name}} | null> {
+    async getById(id: string): Promise<I{{pascalCase name}}> {
         // FIXME: Wrap for error handling
         // TODO: Validate ID
         return await _makeRequest(this._baseUrl, this._headers, { method: 'GET', path: `/${id}` });
